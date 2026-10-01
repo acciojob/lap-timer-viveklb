@@ -1,1 +1,165 @@
+* {
+	box-sizing: border-box;
+}
 
+body {
+	margin: 0;
+	background: #eaf0ef;
+	color: #162a27;
+	font-family: Georgia, "Times New Roman", serif;
+}
+
+button {
+	font: inherit;
+}
+
+.timer-app {
+	min-height: 100vh;
+	padding: 72px 24px;
+	background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.65), transparent 58%);
+}
+
+.timer {
+	width: min(100%, 620px);
+	margin: 0 auto;
+}
+
+.timer-kicker {
+	margin: 0 0 18px;
+	color: #47766d;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 2px;
+}
+
+.timer-display {
+	margin: 0;
+	color: #162a27;
+	font-family: "Courier New", monospace;
+	font-size: clamp(48px, 12vw, 88px);
+	font-weight: 400;
+	line-height: 1;
+	font-variant-numeric: tabular-nums;
+}
+
+.timer-controls {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-top: 36px;
+}
+
+.control {
+	min-width: 104px;
+	min-height: 44px;
+	padding: 0 18px;
+	border: 1px solid #b7c8c3;
+	border-radius: 3px;
+	background: transparent;
+	color: #162a27;
+	cursor: pointer;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	font-weight: 700;
+	transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+
+.control:hover:not(:disabled) {
+	border-color: #162a27;
+	background: #dce7e3;
+}
+
+.control:focus-visible {
+	outline: 3px solid #e66f52;
+	outline-offset: 3px;
+}
+
+.control:disabled {
+	cursor: not-allowed;
+	opacity: 0.42;
+}
+
+.control-start {
+	border-color: #d95f42;
+	background: #d95f42;
+	color: #fff;
+}
+
+.control-start:hover:not(:disabled) {
+	border-color: #bd4b32;
+	background: #bd4b32;
+}
+
+.laps {
+	margin-top: 54px;
+	border-top: 1px solid #b7c8c3;
+}
+
+.laps-heading-row,
+.lap-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.laps-heading-row {
+	padding: 18px 0 10px;
+}
+
+.laps-heading-row h2 {
+	margin: 0;
+	font-size: 20px;
+	font-weight: 400;
+}
+
+.laps-heading-row > span {
+	color: #47766d;
+	font-family: "Courier New", monospace;
+	font-size: 14px;
+}
+
+.laps-empty {
+	margin: 20px 0;
+	color: #60736e;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+}
+
+.laps-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.lap-row {
+	min-height: 48px;
+	border-top: 1px solid #d2ddda;
+	font-variant-numeric: tabular-nums;
+}
+
+.lap-number {
+	color: #60736e;
+	font-family: Arial, sans-serif;
+	font-size: 13px;
+}
+
+.lap-row time {
+	font-family: "Courier New", monospace;
+	font-size: 16px;
+}
+
+@media (max-width: 480px) {
+	.timer-app {
+		padding: 48px 20px;
+	}
+
+	.timer-controls {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.control {
+		min-width: 0;
+	}
+}
